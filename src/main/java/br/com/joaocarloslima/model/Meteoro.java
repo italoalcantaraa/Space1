@@ -13,10 +13,10 @@ public class Meteoro extends Asset {
     public Meteoro(int x, int y, int velocidade, Direcao direcao) {
         super(x, y, velocidade, direcao);
 
-        int random = (int) Math.random() * 8;
+        int random = (int) (1 + (Math.random() * (8 - 1)));
         System.out.println(random);
-        tamanho = random + 1;    
-        
+        tamanho = random + 1;
+
         String path = "images/meteoro/meteoro" + tamanho + ".png";
         ImageView imagem = new ImageView(App.class.getResource(path).toString());
         setImagem(imagem);

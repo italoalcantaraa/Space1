@@ -16,7 +16,7 @@ public class Jogo {
     }
 
     public Meteoro criarMeteoro() {
-        int x = (int) Math.random() * (640 - 50);
+        int x = (int) (1 + (Math.random() * (640 - 50)));
 
         Meteoro meteoro = new Meteoro(x, 0, 10, Direcao.BAIXO);
         assets.add(meteoro);
@@ -26,12 +26,12 @@ public class Jogo {
     public int pontuar() {
         pontos++;
 
-        if(pontos % 10 == 0) {
-            if(nivel + 1 <= 4) {
+        if (pontos % 10 == 0) {
+            if (nivel + 1 <= 4) {
                 nivel++;
             }
         }
-        
+
         return pontos;
     }
 
